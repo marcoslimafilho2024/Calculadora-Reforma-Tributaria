@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENÁRIO ATUAL - SIMPLES NACIONAL</title>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CENÁRIO ATUAL - SIMPLES NACIONAL</h1>
+        
+        <label for="cnpj">Inserir o CNPJ (14 dígitos)</label>
+        <input type="text" id="cnpj" name="cnpj" maxlength="14" placeholder="Digite o CNPJ" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        
+        <label for="atividade">Atividade da Empresa</label>
+        <select id="atividade" name="atividade">
+            <option value="comercio">COMÉRCIO</option>
+            <option value="industria">INDÚSTRIA</option>
+            <option value="servicos_anexo_III">SERVIÇOS ANEXO III</option>
+            <option value="servicos_anexo_IV">SERVIÇOS ANEXO IV</option>
+            <option value="servicos_anexo_V">SERVIÇOS ANEXO V</option>
+        </select>
+        
+        <label for="faturamento">Informar o Faturamento Médio Mensal (Apenas números)</label>
+        <input type="number" id="faturamento" name="faturamento" placeholder="Digite o valor" min="0" step="0.01">
+
+        <label>Informar a RBT12</label>
+        <div class="flag-group">
+            <label>
+                <input type="radio" name="rbt12" value="manual" checked>
+                Inserir manualmente
+            </label>
+            <label>
+                <input type="radio" name="rbt12" value="calcular">
+                Calcular com base no faturamento
+            </label>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </div>
+</body>
+</html>
